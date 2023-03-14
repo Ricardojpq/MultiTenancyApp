@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MultiTenancyApp.Entities;
+using MultiTenancyApp.Entities.Interfaces;
 using MultiTenancyApp.Extensions;
 using MultiTenancyApp.Services.Interfaces;
 using System.Linq.Expressions;
@@ -13,7 +15,7 @@ namespace MultiTenancyApp.Persistence
         private string tenantId;
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
-            IServiceTenant serviceTenant) 
+            ITenantService serviceTenant) 
                 : base(options)
         {
             tenantId = serviceTenant.GetTenant();
@@ -35,9 +37,16 @@ namespace MultiTenancyApp.Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
+        public DbSet<Company> Company { get; set; }
+        public DbSet<CompanyUserPermission> CompanyUserPermission { get; set; }
+        public DbSet<Link> Link { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<CompanyUserPermission>()
+                .HasKey(x => new { x.UserId, x.CompanyId, x.Permission });
             foreach (var entity in builder.Model.GetEntityTypes())
             {
                 var type = entity.ClrType;
@@ -69,5 +78,6 @@ namespace MultiTenancyApp.Persistence
             Expression<Func<TEntity, bool>> filter = x => x.TenantId == context.tenantId;
             return filter;
         }
+
     }
 }

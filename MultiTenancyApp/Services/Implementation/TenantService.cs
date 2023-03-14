@@ -6,11 +6,11 @@ using MultiTenancyApp.Utils;
 
 namespace MultiTenancyApp.Services.Implementation
 {
-    public class ServiceTenant : IServiceTenant
+    public class TenantService : ITenantService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ServiceTenant(IHttpContextAccessor httpContextAccessor)
+        public TenantService(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
         }

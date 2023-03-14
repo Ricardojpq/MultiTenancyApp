@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Persistence\SeedData\Data\" />
+    <Folder Include="Persistence\SeedData\Models\" />
     <Folder Include="wwwroot\media\logos\" />
   </ItemGroup>
 

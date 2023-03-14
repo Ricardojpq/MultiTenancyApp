@@ -1,6 +1,6 @@
 ﻿namespace MultiTenancyApp.Services.Interfaces
 {
-    public interface IServiceTenant
+    public interface ITenantService
     {
         public string GetTenant();
     }

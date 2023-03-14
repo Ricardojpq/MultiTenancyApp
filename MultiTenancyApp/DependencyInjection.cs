@@ -26,7 +26,9 @@ namespace MultiTenancyApp
             }).AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-            services.AddTransient<IServiceTenant, ServiceTenant>();
+            services.AddTransient<ITenantService, TenantService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddScoped<IChangeTenantService, ChangeTenantService>();
             return services;
         }
     }
