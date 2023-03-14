@@ -1,0 +1,94 @@
+﻿@model LoginViewModel
+<div class="d-flex flex-column flex-root">
+    <!--begin::Authentication - Sign-in -->
+    <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(assets/media/illustrations/sketchy-1/14.png)">
+        <!--begin::Content-->
+        <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+            <!--begin::Logo-->
+            <a href="" class="mb-12">
+                <img  alt="Logo" src="~/media/logos/Logo.png" class="h-80px" />
+            </a>
+            <!--end::Logo-->
+            <!--begin::Wrapper-->
+            <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
+                <!--begin::Form-->
+                <form class="form w-100" novalidate="novalidate"
+                      id="account"
+                      method="post"
+                      autocomplete="off">
+                    <!--begin::Heading-->
+                    <div class="text-center mb-10">
+                        <!--begin::Title-->
+                        <h1 class="text-dark mb-3">Ingresar </h1>
+                        <!--end::Title-->
+                        <!--begin::Link-->
+                        <div class="text-gray-400 fw-bold fs-4">
+                            Eres nuevo aqui?
+                            <a asp-controller="Account" asp-action="Register"  class="link-primary fw-bolder">Crear una Cuenta</a>
+                        </div>
+                        <!--end::Link-->
+                    </div>
+                    <!--begin::Heading-->
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-10">
+                        <!--begin::Label-->
+                        <div class="form-group">
+                            <label class="form-label fs-6 fw-bolder text-dark">Correo Electrónico</label>
+
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input asp-for="Email" placeholder="Email" class="form-control form-control-lg form-control-solid" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+                        </div>
+                        <!--end::Input-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="fv-row mb-10">
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-stack mb-2">
+                            <!--begin::Label-->
+                            <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                            <!--end::Label-->
+                            <!--begin::Link-->
+           @*                 <a asp-controller="Account"
+                               asp-action="@nameof(AccountController.ForgotPassword)"
+                               asp-route-returnUrl="@Model.ForgotPasswordReturnUrl"
+                               class="link-primary fs-6 fw-bolder">Olvidaste tu Password ?</a>*@
+                            <!--end::Link-->
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Password" placeholder="Password" class="form-control form-control-lg form-control-solid" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                        </div>
+
+                        @if (ViewData.ModelState.ErrorCount > 0)
+                        {
+
+                            <div class="col-12  p-2  mt-1 mb-4 text-danger">
+
+                                    @foreach (var modelState in ViewData.ModelState.Values)
+                                    {
+                                        foreach (var error in modelState.Errors)
+                                        {
+                                                <text>- @error.ErrorMessage</text>
+                                        }
+                                    }
+                            </div>
+                        }
+                        <!--end::Wrapper-->
+                        <!--begin::Input-->
+                        <!--end::Input-->
+
+                    </div>
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Content-->
+    </div>
+    <!--end::Authentication - Sign-in-->
+</div>

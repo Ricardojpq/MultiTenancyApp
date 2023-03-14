@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancyApp", "MultiTenancyApp\MultiTenancyApp.csproj", "{46CF4188-4DD2-454C-BE47-BFEA13FF064A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancyApp.Domain", "MultiTenancyApp.Domain\MultiTenancyApp.Domain.csproj", "{47BD313E-03F2-4334-A9EE-F0E9B51C214B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CF4188-4DD2-454C-BE47-BFEA13FF064A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CF4188-4DD2-454C-BE47-BFEA13FF064A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CF4188-4DD2-454C-BE47-BFEA13FF064A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CF4188-4DD2-454C-BE47-BFEA13FF064A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47BD313E-03F2-4334-A9EE-F0E9B51C214B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BD313E-03F2-4334-A9EE-F0E9B51C214B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BD313E-03F2-4334-A9EE-F0E9B51C214B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BD313E-03F2-4334-A9EE-F0E9B51C214B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CDBB3DB-0B4D-449D-9936-CA3BA2464BF0}
+	EndGlobalSection
+EndGlobal
